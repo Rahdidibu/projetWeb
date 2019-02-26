@@ -3,5 +3,5 @@
 #    controller: App\Controller\DefaultController::index
 
 hello_world:
-  path: /hello-world
-  controller: App\Controller\AdvertController::index
+    path: /hello-world
+    controller: App\Controller\AdvertController::index
