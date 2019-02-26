@@ -16,6 +16,7 @@ class srcApp_KernelDevDebugContainerUrlMatcher extends Symfony\Bundle\FrameworkB
         $this->context = $context;
         $this->staticRoutes = [
             '/hello-world' => [[['_route' => 'hello_world', '_controller' => 'App\\Controller\\AdvertController::index'], null, null, null, false, false, null]],
+            '/db' => [[['_route' => 'db', '_controller' => 'App\\Controller\\db::connection'], null, null, null, false, false, null]],
         ];
         $this->regexpList = [
             0 => '{^(?'

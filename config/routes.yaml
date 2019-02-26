@@ -5,3 +5,7 @@
 hello_world:
     path: /hello-world
     controller: App\Controller\AdvertController::index
+
+db:
+    path: /db
+    controller: App\Controller\db::connection
