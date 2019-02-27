@@ -1,13 +1,19 @@
 {# templates/Advert/index.html.twig #}
 
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Bienvenue sur ma première page avec OpenClassrooms !</title>
     <meta charset="UTF-8">
 </head>
 <body>
 <h1>Hello World !</h1>
+{% for element in forms %}
+    {{ element.etablissement }}
+    {{ element.composante }}
+    {{ element.zone }}
+</br>
+{% endfor %}
 <p>
     Le Hello World est un grand classique en programmation.
     Il signifie énormément, car cela veut dire que vous avez

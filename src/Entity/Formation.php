@@ -11,26 +11,26 @@ namespace App\Entity;
 
 class Formation
 {
-    protected $etablissement_name;
-    protected $composante_name;
-    protected $zone;
-    protected $description;
-    protected $longitude;
-    protected $lattitude;
+    public $etablissement;
+    public $composante;
+    public $zone;
+    public $description;
+    public $longitude;
+    public $lattitude;
 
     /**
      * Formation constructor.
-     * @param $etablissement_name
-     * @param $composante_name
+     * @param $etablissement
+     * @param $composante
      * @param $zone
      * @param $description
      * @param $longitude
      * @param $lattitude
      */
-    public function __construct($etablissement_name, $composante_name, $zone, $description, $longitude, $lattitude)
+    public function __construct($etablissement, $composante, $zone, $description, $longitude, $lattitude)
     {
-        $this->etablissement_name = $etablissement_name;
-        $this->composante_name = $composante_name;
+        $this->etablissement = $etablissement;
+        $this->composante = $composante;
         $this->zone = $zone;
         $this->description = $description;
         $this->longitude = $longitude;
@@ -40,33 +40,33 @@ class Formation
     /**
      * @return mixed
      */
-    public function getEtablissementName()
+    public function getEtablissement()
     {
-        return $this->etablissement_name;
+        return $this->etablissement;
     }
 
     /**
-     * @param mixed $etablissement_name
+     * @param mixed $etablissement
      */
-    public function setEtablissementName($etablissement_name): void
+    public function setEtablissement($etablissement): void
     {
-        $this->etablissement_name = $etablissement_name;
+        $this->etablissement = $etablissement;
     }
 
     /**
      * @return mixed
      */
-    public function getComposanteName()
+    public function getComposante()
     {
-        return $this->composante_name;
+        return $this->composante;
     }
 
     /**
-     * @param mixed $composante_name
+     * @param mixed $composante
      */
-    public function setComposanteName($composante_name): void
+    public function setComposante($composante): void
     {
-        $this->composante_name = $composante_name;
+        $this->composante = $composante;
     }
 
     /**
