@@ -1,37 +1,38 @@
 {# templates/Advert/index.html.twig #}
 
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/html">
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css">
+<html xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 <style>
     {#
     Insérer le CSS nécéssaire
     #}
 </style>
 <head>
-  <title>Bienvenue sur ma première page avec OpenClassrooms !</title>
+  <title>Référencement des formations</title>
   <meta charset="UTF-8">
 </head>
 <body>
   <h2>Recherche Formation pour membre de l'UBL</h2>
   <div class="topnav">
     <input class=bar type="text" placeholder="Formation">
-    <button class=button>Rechercher</button>
+    <button type="button" class="btn btn-primary">Rechercher</button>
   </div>
-  <table id="red">
+  <table class="table">
     <tr>
-      <th class="red">Nom de l'établissement</th>
-      <th>Composante</th>
-      <th>Localisation</th>
+      <th scope="col">Nom de l'établissement</th>
+      <th scope="col">Composante</th>
+      <th scope="col">Localisation</th>
+      <th scope="col">Désignation</th>
     </tr>
     {% for element in forms %}
-    <tr>
+      <tr scope="row">
       <td>{{ element.etablissement }}</td>
       <td>{{ element.composante }}</td>
       <td>{{ element.zone }}</td>
+      <td>{{ element.description }}</td>
     </tr>
-
     {% endfor %}
   </table>
 
