@@ -23,9 +23,6 @@ class Kernel extends BaseKernel
                 yield new $class();
             }
         }
-        $bundles = array(
-            new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
-        );
     }
 
     protected function configureContainer(ContainerBuilder $container, LoaderInterface $loader)
