@@ -3,22 +3,35 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
 <head>
-    <title>Bienvenue sur ma première page avec OpenClassrooms !</title>
-    <meta charset="UTF-8">
+  <title>Bienvenue sur ma première page avec OpenClassrooms !</title>
+  <meta charset="UTF-8">
 </head>
 <body>
-<h1>Hello World !</h1>
-{% for element in forms %}
-    {{ element.etablissement }}
-    {{ element.composante }}
-    {{ element.zone }}
-</br>
-{% endfor %}
-<p>
+  <h2>Recherche Formation pour membre de l'UBL</h2>
+  <div class="topnav">
+    <input class=bar type="text" placeholder="Formation">
+    <button class=button>Rechercher</button>
+  </div>
+  <table>
+    <tr>
+      <th>Nom de l'établissement</th>
+      <th>Composante</th>
+      <th>Localisation</th>
+    </tr>
+    {% for element in forms %}
+    <tr>
+      <td>{{ element.etablissement }}</td>
+      <td>{{ element.composante }}</td>
+      <td>{{ element.zone }}</td>
+    </tr>
+
+    {% endfor %}
+  </table>
+  <p>
     Le Hello World est un grand classique en programmation.
     Il signifie énormément, car cela veut dire que vous avez
     réussi à exécuter le programme pour accomplir une tâche simple :
     afficher ce hello world !
-</p>
+  </p>
 </body>
 </html>
