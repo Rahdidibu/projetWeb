@@ -22,6 +22,7 @@ class srcApp_KernelDevDebugContainerUrlGenerator extends Symfony\Component\Routi
             self::$declaredRoutes = [
         '_twig_error_test' => [['code', '_format'], ['_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], []],
         'hello_world' => [[], ['_controller' => 'App\\Controller\\AdvertController::index'], [], [['text', '/hello-world']], [], []],
+        'db' => [[], ['_controller' => 'App\\Controller\\db::connection'], [], [['text', '/db']], [], []],
     ];
         }
     }
