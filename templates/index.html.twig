@@ -34,6 +34,12 @@
 
     {% endfor %}
   </table>
+
+  {% block body %}
+    {{ include('maps.html.twig') }}
+
+    {# ... #}
+  {% endblock %}
   <p>
     Le Hello World est un grand classique en programmation.
     Il signifie énormément, car cela veut dire que vous avez
