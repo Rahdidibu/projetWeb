@@ -19,21 +19,21 @@ class db
     {
       $bdd = new PDO('mysql:host=localhost;dbname=projetWeb;charset=utf8', 'root', '');
       //  $bdd = new PDO('mysql:host=localhost;dbname="DBNAME";charset=utf8', ID, PASSWORD);
-      $this->getAllFormation($bdd);
+
+      $donnee=$this->getAllFormation($bdd);
       $bdd=null;
     }
     catch (Exception $e)
     {
       die('Erreur : ' . $e->getMessage());
     }
-return new Response($this->donnee[0]); //Affiche première élément tab --> pour ne pas avoir d'erreur
+    return new Response($this->donnee[1]); //Affiche première élément tab --> pour ne pas avoir d'erreur
   }
 
   public function getAllFormation($bdd){
-    $result = $bdd->query('SELECT etablissement_lib, comp_lib, zone_lib, mention_lib, etablissement_zone_lon ,etablissement_zone_lat from formation
+    return $bdd->query('SELECT etablissement_lib, comp_lib, zone_lib, mention_lib, etablissement_zone_lon ,etablissement_zone_lat from formation
       inner join etablissement on formation.etablissement_id = etablissement.etablissement_id
       inner join zone on formation.zone_id = zone.zone_id
-      inner join composante on formation.comp_id = composante.comp_id');
-      $this->donnee=$result->fetch();
+      inner join composante on formation.comp_id = composante.comp_id')->fetch();
     }
   }
